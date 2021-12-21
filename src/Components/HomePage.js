@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import EditorFile from "./EditorFile";
 import styled from "styled-components";
+import useLocalStorage from "./LocalStorageFile";
 const HomePage = () => {
-	const [html, setHtml] = useState("");
-	const [js, setJS] = useState("");
-	const [css, setCSS] = useState("");
+	const [html, setHtml] = useLocalStorage("html", "");
+	const [js, setJS] = useLocalStorage("js", "");
+	const [css, setCSS] = useLocalStorage("css", "");
 
 	// code to make everything working on the iframe
 	const [srcDoc, setSrcDoc] = useState("");
